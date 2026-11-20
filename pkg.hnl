@@ -1,3 +1,10 @@
 -- lib-concurrent: modules this package provides (entry defaults to
 -- src/index.hnl; N modules resolve to src/<name>/index.hnl).
-{ modules: ["concurrent"] }
+{
+  modules: ["concurrent"],
+  name: "concurrent",
+  description: "Cooperative concurrency contract — the step-arrow model port.",
+  license: "MIT",
+  keywords: ["concurrent", "async", "contract", "stdlib"],
+  homepage: "https://github.com/handl-lang/lib-concurrent",
+}
