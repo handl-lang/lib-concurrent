@@ -1,0 +1,16 @@
+--- Smoke tests for the `concurrent` contract module (`src/index.hnl`).
+---
+--- The module exports the `Task`/`Run` type arrows and the `run_done`
+--- helper. `run_done` returns a `~>[2]~>`-graded arrow the eval engine
+--- does not reduce to a value, and a real `Run` needs a scheduler
+--- backend (`lib-concurrent-epoll`, `lib-concurrent-js`) — so the
+--- behavioural coverage lives in those repos. Here we assert the
+--- surface loads and every export is present.
+
+from "./index" import * as m
+
+test_task_export := assert m.Task != null
+
+test_run_export := assert m.Run != null
+
+test_run_done_export := assert m.run_done != null
